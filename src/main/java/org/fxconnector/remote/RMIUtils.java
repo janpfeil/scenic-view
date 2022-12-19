@@ -1,6 +1,6 @@
 /*
- * Scenic View, 
- * Copyright (C) 2012 Jonathan Giles, Ander Ruiz, Amy Fowler 
+ * Scenic View,
+ * Copyright (C) 2012 Jonathan Giles, Ander Ruiz, Amy Fowler
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,13 +36,13 @@ class RMIUtils {
     }
 
     private static final RemoteConnector findScenicView(final String serverAdress, final int serverPort) throws Exception {
-        final Registry registry = LocateRegistry.getRegistry(serverAdress, (new Integer(serverPort)).intValue());
+        final Registry registry = LocateRegistry.getRegistry(serverAdress, (Integer.valueOf(serverPort)).intValue());
         // look up the remote object
         return (RemoteConnector) (registry.lookup(REMOTE_CONNECTOR));
     }
 
     private static final RemoteApplication findApplication(final String serverAdress, final int serverPort) throws Exception {
-        final Registry registry = LocateRegistry.getRegistry(serverAdress, (new Integer(serverPort)).intValue());
+        final Registry registry = LocateRegistry.getRegistry(serverAdress, (Integer.valueOf(serverPort)).intValue());
         // look up the remote object
         return (RemoteApplication) (registry.lookup(REMOTE_AGENT));
     }
